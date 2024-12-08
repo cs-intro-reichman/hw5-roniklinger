@@ -5,7 +5,7 @@ import java.util.Random;
  */
 public class MyString {
     public static void main(String args[]) {
-        String hello = "hello";
+        //String hello = "hello";
         /*System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
@@ -65,6 +65,9 @@ public class MyString {
     public static boolean subsetOf(String str1, String str2) {
         boolean b = false;
         int count = 0;
+        if(str1 == ""){
+            return true;
+        }
         for(int i=0; i<str1.length();i++){
             count = countChar(str2, str1.charAt(i)) ;
             int check = countChar(str1, str1.charAt(i));
