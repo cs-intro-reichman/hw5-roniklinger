@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * A library of string functions.
  */
@@ -8,6 +10,21 @@ public class MyString {
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
+        
+        
+        System.out.println(subsetOf("sap","space"));
+        System.out.println(subsetOf("spa","space"));
+        System.out.println(subsetOf("pass","space"));
+        System.out.println(subsetOf("c","space"));
+
+        System.out.println(spacedString("silent"));
+
+        System.out.println(randomStringOfLetters(3));
+        System.out.println(randomStringOfLetters(4));
+
+        System.out.println(remove("meet","committee"));
+
+        System.out.println(insertRandomly('s',"cat"));
         //// Put your other tests here.
     }
 
@@ -20,8 +37,14 @@ public class MyString {
      * @return the number of times c appears in str
      */
     public static int countChar(String str, char ch) {
-        //// Replace the following statement with your code
-        return 0;
+        str = str.toLowerCase();
+        int count = 0;
+        for(int i=0; i<str.length();i++){
+            if(str.charAt(i) == ch){
+                count++;
+            }
+        }
+        return count;
     }
 
     /** Returns true if str1 is a subset string str2, false otherwise
@@ -36,8 +59,19 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         //// Replace the following statement with your code
-        return false;
+        boolean b = false;
+        int count = 0;
+        for(int i=0; i<str1.length();i++){
+            count = countChar(str2, str1.charAt(i)) ;
+            int check = countChar(str1, str1.charAt(i));
+            if(check == count){
+                b = true;
+            }
+            else {
+                return false;
+            }
+        }
+        return b;
     }
 
     /** Returns a string which is the same as the given string, with a space
@@ -49,8 +83,16 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        //// Replace the following statement with your code
-        return null;
+        String new_str = "";
+        for(int i=0; i<str.length();i++){
+            if(i != str.length() - 1){
+                new_str = new_str + str.charAt(i) + " ";
+            }
+            else{
+                new_str = new_str + str.charAt(i);
+            }
+        }
+        return new_str;
     }
   
     /**
@@ -64,23 +106,35 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-        //// Replace the following statement with your code
-        return null;
+        Random random = new Random();
+        String str = "";
+        for(int i=0;i<n;i++){
+            char letter = (char) ('a' + random.nextInt(26));
+            str = str + letter;
+        }
+        
+        return str;
     }
 
     /**
-     * Returns a string consisting of the string str1, minus all the characters in the
-     * string str2. Assumes (without checking) that str2 is a subset of str1.
-     * Example: remove("meet","committee") returns "comit" 
-     * 
-     * @param str1 - a string
-     * @param str2 - a string
-     * @return a string consisting of str1 minus all the characters of str2
-     */
+         * Returns a string consisting of the string str1, minus all the characters in the
+         * string str2. Assumes (without checking) that str2 is a subset of str1.
+         * Example: remove("meet","committee") returns "comit" 
+         * 
+         * @param str1 - a string
+         * @param str2 - a string
+         * @return a string consisting of str1 minus all the characters of str2
+         */
     public static String remove(String str1, String str2) {
-       //// Replace the following statement with your code
-        return null;
+        for(int i=0;i<str1.length();i++){
+            char ch = str1.charAt(i);
+            if (countChar(str2, ch) > 0) {
+                str2 = str2.replaceFirst(String.valueOf(ch), "");
+            } 
+        }
+        return str2;
     }
+    
 
     /**
      * Returns a string consisting of the given string, with the given 
