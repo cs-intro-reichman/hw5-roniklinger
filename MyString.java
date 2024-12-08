@@ -6,7 +6,7 @@ import java.util.Random;
 public class MyString {
     public static void main(String args[]) {
         String hello = "hello";
-        System.out.println(countChar(hello, 'h'));
+        /*System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
@@ -20,11 +20,15 @@ public class MyString {
         System.out.println(spacedString("silent"));
 
         System.out.println(randomStringOfLetters(3));
-        System.out.println(randomStringOfLetters(4));
+        System.out.println(randomStringOfLetters(4));*/
 
-        System.out.println(remove("meet","committee"));
+        System.out.println(remove("committee","meet"));
+        System.out.println(remove("abc" , "abc"));
+        System.out.println(remove("abc","b"));
+        System.out.println(remove("hello",""));
 
-        System.out.println(insertRandomly('s',"cat"));
+        //System.out.println(insertRandomly('s',"cat"));
+        
         //// Put your other tests here.
     }
 
@@ -126,15 +130,16 @@ public class MyString {
          * @return a string consisting of str1 minus all the characters of str2
          */
     public static String remove(String str1, String str2) {
-        for(int i=0;i<str1.length();i++){
-            char ch = str1.charAt(i);
-            if (countChar(str2, ch) > 0) {
-                str2 = str2.replaceFirst(String.valueOf(ch), "");
-            } 
+            
+           for(int i=0;i<str2.length();i++){
+                char ch = str2.charAt(i);
+                if (countChar(str1, ch) > 0) {
+                    
+                    str1 = str1.replaceFirst(String.valueOf(ch), "");
+                }
+            }
+            return str1;
         }
-        return str2;
-    }
-    
 
     /**
      * Returns a string consisting of the given string, with the given 
