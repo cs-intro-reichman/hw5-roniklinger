@@ -5,6 +5,7 @@ import java.util.Random;
  */
 public class MyString {
     public static void main(String args[]) {
+        System.out.println(subsetOf("runi","runnig"));
         //String hello = "hello";
         /*System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
@@ -20,12 +21,12 @@ public class MyString {
         System.out.println(spacedString("silent"));
 
         System.out.println(randomStringOfLetters(3));
-        System.out.println(randomStringOfLetters(4));*/
+        System.out.println(randomStringOfLetters(4));
 
         System.out.println(remove("committee","meet"));
         System.out.println(remove("abc" , "abc"));
         System.out.println(remove("abc","b"));
-        System.out.println(remove("hello",""));
+        System.out.println(remove("hello",""));*/
 
         //System.out.println(insertRandomly('s',"cat"));
         
@@ -71,7 +72,7 @@ public class MyString {
         for(int i=0; i<str1.length();i++){
             count = countChar(str2, str1.charAt(i)) ;
             int check = countChar(str1, str1.charAt(i));
-            if(check == count){
+            if(check <= count){
                 b = true;
             }
             else {
