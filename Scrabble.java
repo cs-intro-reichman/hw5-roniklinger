@@ -47,7 +47,6 @@ public class Scrabble {
 			DICTIONARY[NUM_OF_WORDS++] = in.readString().toLowerCase();
 		}
         System.out.println(NUM_OF_WORDS + " words loaded.");
-		System.out.println(theSameWord("roni", "roni"));
 	}
 	
 	public static boolean theSameWord(String word1, String word2) {
@@ -151,9 +150,10 @@ public class Scrabble {
 				else{
 					System.out.println("No such word in the dictionary. Try again.");
 				}
+			}	
+			else{
+				System.out.println("Invalid word. Try again.");
 			}
-			
-			
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
@@ -178,7 +178,15 @@ public class Scrabble {
 			String input = in.readString();
 			//// Replace the following break statement with code
 			//// that completes the game playing loop
-			break;
+			
+
+			if(input.equals("e")){
+				break;
+			}
+			if(input.equals("n")){
+				String hand = createHand();
+				playHand(hand);
+			}
 		}
 	}
 
@@ -187,8 +195,8 @@ public class Scrabble {
 		///testBuildingTheDictionary();  
 		///testScrabbleScore();    
 		////testCreateHands();  
-		testPlayHands();
-		////playGame();
+		//testPlayHands();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
@@ -215,7 +223,7 @@ public class Scrabble {
 	public static void testPlayHands() {
 		init();
 		//playHand("ocostrza");
-		playHand("runninga");
+		//playHand("runninga");
 		//playHand("arbffip");
 		//playHand("aretiin");
 	}
