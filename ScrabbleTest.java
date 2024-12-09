@@ -6,6 +6,9 @@ public class ScrabbleTest {
             System.out.println("Please provide a specific test to run: isWordInDictionary, wordScore, createHand, playHand, playHandWithMockInput, or playGameWithMockInput.");
             return;
         }
+        
+    
+
         // Run specific test based on argument
         switch (args[0]) {
             case "isWordInDictionary": testIsWordInDictionary(); break;
