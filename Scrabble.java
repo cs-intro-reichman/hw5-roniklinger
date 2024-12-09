@@ -2,7 +2,6 @@
  * RUNI version of the Scrabble game.
  */
 
-import java.util.Random;
 
 public class Scrabble {
 
@@ -145,7 +144,7 @@ public class Scrabble {
 
 					score = score + wordScore(input);
 					hand = MyString.remove(hand, input);
-					System.out.println(input + " earned " + wordScore(input) +" points. Score: " + score +" points.\n");
+					System.out.println(input + " earned " + wordScore(input) +" points. Score: " + score +" points\n");
 				}
 				else{
 					System.out.println("No such word in the dictionary. Try again.");
@@ -195,8 +194,8 @@ public class Scrabble {
 		///testBuildingTheDictionary();  
 		///testScrabbleScore();    
 		////testCreateHands();  
-		testPlayHands();
-		//playGame();
+		////testPlayHands();
+		////playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
