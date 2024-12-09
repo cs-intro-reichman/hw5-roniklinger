@@ -195,8 +195,8 @@ public class Scrabble {
 		///testBuildingTheDictionary();  
 		///testScrabbleScore();    
 		////testCreateHands();  
-		//testPlayHands();
-		playGame();
+	testPlayHands();
+		//playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
@@ -225,6 +225,6 @@ public class Scrabble {
 		//playHand("ocostrza");
 		//playHand("runninga");
 		//playHand("arbffip");
-		//playHand("aretiin");
+		playHand("aretiin");
 	}
 }
