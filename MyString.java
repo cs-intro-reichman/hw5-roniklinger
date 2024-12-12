@@ -138,7 +138,6 @@ public class MyString {
            for(int i=0;i<str2.length();i++){
                 char ch = str2.charAt(i);
                 if (countChar(str1, ch) > 0) {
-                    
                     str1 = str1.replaceFirst(String.valueOf(ch), "");
                 }
             }
